@@ -57,7 +57,7 @@ h6 {
   justify-content: center;
   align-items: center;
   grid-area: header;
-  background-image: url("/practice05_bonus/assets/images/header-background.jpeg");
+  background-image: url("assets/images/header-background.jpeg");
   background-size: cover;
   background-position: center;
 }
