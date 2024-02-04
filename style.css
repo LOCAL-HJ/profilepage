@@ -1,0 +1,214 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  background-color: #b7c9f666;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+#wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+@media all and (max-width: 425px) {
+  #wrap {
+    align-items: flex-start;
+  }
+}
+
+#wrap .container {
+  display: grid;
+  grid-template-areas:
+    "header main"
+    "header footer";
+
+  grid-template-columns: 200px 1fr;
+
+  margin: 0 auto;
+  max-width: 520px;
+  width: 100%;
+  background-color: #fff;
+}
+
+@media all and (max-width: 425px) {
+  #wrap .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+}
+
+#header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: header;
+  background-image: url("/practice05_bonus/assets/images/header-background.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+@media all and (max-width: 425px) {
+  #header {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 200px;
+  }
+}
+
+#header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(44, 62, 80, 0.4);
+}
+#header .title {
+  position: relative;
+  z-index: 2;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 180%;
+  letter-spacing: 2px;
+  color: #ecf0f1;
+}
+#header a {
+  position: absolute;
+  z-index: 2;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  background-color: #ecf0f1;
+  border-radius: 20px;
+}
+#main {
+  grid-area: main;
+  padding: 50px 20px;
+  min-height: 450px;
+}
+
+@media all and (max-width: 425px) {
+  #main {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+  }
+}
+
+#main ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* #main ul{
+  margin-top:16px;
+}
+#main ul:first-child{
+  margin-top:0;
+} */
+#main li:not(:first-child) {
+  margin-top: 23px;
+}
+
+#main li a {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  height: 50px;
+  box-shadow: 0px 2px 8px #ecf0f1;
+  border-radius: 4px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+@media all and (max-width: 425px) {
+  #main li a {
+    height: 60px;
+  }
+}
+#main li a:hover {
+  box-shadow: 0px 2px 8px #c1d8de;
+}
+
+#main li .instagram .icon {
+  background: radial-gradient(
+        51.8% 49.8% at 36.25% 96.55%,
+        #ffd600 0%,
+        #ff6930 48.44%,
+        #fe3b36 73.44%,
+        rgba(254, 59, 54, 0) 100%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    radial-gradient(
+        182.65% 122.8% at 84.5% 113.5%,
+        #ff1b90 24.39%,
+        #f80261 43.67%,
+        #ed00c0 68.85%,
+        #c500e9 77.68%,
+        #7017ff 89.32%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+}
+
+#main li .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 100%;
+  border-right: 1px solid #ecf0f1;
+}
+
+#main li .icon i {
+  color: #3f52cd;
+}
+@media all and (max-width: 425px) {
+  #main li .icon {
+    width: 60px;
+  }
+}
+#main li .text {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 180%;
+  color: #2c3e50;
+}
+@media all and (max-width: 425px) {
+  #main li .text {
+    font-size: 14px;
+  }
+}
+#footer {
+  grid-area: footer;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+}
+@media all and (max-width: 425px) {
+  #footer {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+  }
+}
